@@ -2,4 +2,4 @@ import csv
 
 path = 'python/projects/files/'
 file = open(path + 'csv.csv', 'r')
-print(file.read())  # TOD
+print(file.read())
