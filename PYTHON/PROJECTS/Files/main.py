@@ -1,6 +1,5 @@
-file = open('python/projects/files/data.txt', 'a')
-fil = open('python/projects/files/data.txt', 'r')
-file.write('hello')
+import csv
 
-print(fil.read())
-file.close()
+path = 'python/projects/files/'
+file = open(path + 'csv.csv', 'r')
+print(file.read())  # TOD
