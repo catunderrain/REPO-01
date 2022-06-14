@@ -1,0 +1,3 @@
+https://github.com/john-smilga/javascript-basic-projects/tree/master/01-color-flipper
+https://github.com/john-smilga/javascript-basic-projects
+https://www.freecodecamp.org/news/javascript-projects-for-beginners/#how-to-create-a-color-flipper

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Sun Sign Infos</title>
+</head>
+<script>
+    function display(element) {
+        document.getElementById('image').innerHTML = element.alt;
+    }
+    function revert() {
+        document.getElementById('image').innerHTML = "Hover over a sunsign image to display details.";
+    }
+</script>
+<style>
+    #image {
+        width: 650px;
+        height: 70px;
+        border: 5px solid pink;
+        background-color: black;
+        background-repeat: no-repeat;
+        color: white;
+        background-size: 100%;
+        font-family: Didot;
+        font-size: 150%;
+        line-height: 60px;
+        text-align: center;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+</style>
+
+<body>
+    <div>
+        <p id="image">Hover over a sunsign image to display details.
+        <p>
+            <img alt="Sagittarius are beautiful, loyal and passionate." src="saggi.jpg" onmouseover="display(this)"
+                onmouseout="revert()">
+            <img alt="Pisces are dreamy, helpful and love everyone!" src="pisces.jpg" onmouseover="display(this)"
+                onmouseout="revert()">
+            <img alt="Leo are strong and fearless. They aim for and achieve a lot!" src="leo.jpg"
+                onmouseover="display(this)" onmouseout="revert()">
+            <img alt="Scorpions are friends for life. They are trustworthy and truthful." src="scorpio.jpg"
+                onmouseover="display(this)" onmouseout="revert()">
+    </div>
+</body>
+
+</html>

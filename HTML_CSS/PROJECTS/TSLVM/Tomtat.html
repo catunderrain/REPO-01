@@ -1,0 +1,258 @@
+<!dOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div c0>
+        <h1>CHƯƠNG 0: Mô hình OSI</h1>
+        Mô hình OSI 7 bước
+    </div>
+    <div c1>
+        <h1>CHƯƠNG 1: Lớp vật lý và phương tiện truyền dẫn</h1>
+        <ol>
+            <li>Truyền dẫn có dây
+                <ol>
+                    <li>Cáp song hành</li>
+                    <li>Cáp xoắn</li>
+                    <li>Cáp đồng trục</li>
+                    <li>Cáp quang</li>
+                    <li>Quá trình phát triển và tiêu chuẩn cáp</li>
+                </ol>
+            </li>
+            <li>Truyền dẫn không dây
+                <ol>
+                    <li>Vi ba vệ tinh</li>
+                    <li>Vi ba mặt đất</li>
+                    <li>Hồng ngoại</li>
+                </ol>
+            </li>
+            <li>Các chuẩn giao tiếp lớp vật lý
+                <ol>
+                    <li>RS232</li>
+                    <li>RS422</li>
+                    <li>RS485</li>
+                </ol>
+            </li>
+            <li>Các kỹ thuật mã đường dây
+                <ul>
+                    <li>Line coding</li>
+                    <li>Dữ liệu truyền</li>
+                    <li>Ảnh hưởng của mất đồng bộ</li>
+                    <li>Các dạng mã hóa:
+                        <ul>
+                            <li>Unipolar nrz</li>
+                            <li>Polar nrz-l nrz-i</li>
+                            <li>Polar nrz</li>
+                            <li>Polar rz</li>
+                            <li>Bi-phase</li>
+                            <li>Bipolar-ami</li>
+                            <li>Bipolar-scambling</li>
+                            <li>Bipolar-b8zs</li>
+                            <li>Bipolar-hdb3</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Kênh truyền
+                <ul>
+                    <li>Roundtrip time</li>
+                    <li>Kênh truyền</li>
+                    <li>Suy giảm đường truyền</li>
+                    <li>Suy hao</li>
+                    <li>Méo dạng và nhiễu</li>
+                    <li>SNR</li>
+                    <li>Dung lượng đường truyền</li>
+                </ul>
+            </li>
+            <li>Nhiễu Gauss và tỷ lệ lỗi bit
+                <ul>
+                    <li>Nhiễu Gauss</li>
+                    <li>Lỗi bit</li>
+                    <li>Nhiễu Gauss và tỷ lệ lỗi bit</li>
+                    <li>Tỷ lệ lỗi khung</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div c2>
+        <h1>CHƯƠNG 2: Kỹ thuật truyền số liệu</h1>
+        <ol>
+            <li>Truyền bất đồng bộ
+                <ul>
+                    <li>Đồng bộ bit</li>
+                    <li>Đồng bộ ký tự</li>
+                    <li>Đồng bộ khung</li>
+                </ul>
+            </li>
+            <li>Truyền đồng bộ
+                <ul>
+                    <li>Đồng bộ bit
+                        <ul>
+                            <li>Clock encoding and extraction</li>
+                            <li>Digital Phase-lock-loop DPLL</li>
+                            <li>Hybrid</li>
+                        </ul>
+                    </li>
+                    <li>Đồng bộ khung
+                        <ul>
+                            <li>Character-oriented</li>
+                            <li>Bit-oriented</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Mã hóa kênh
+                <ul>
+                    <li>Parity check</li>
+                    <li>Block sum check</li>
+                    <li>Cyclic Redundancy Check</li>
+                    <li>CRC encoder and decoder</li>
+                    <li>Một số chuẩn đa thức sinh</li>=
+                </ul>
+            </li>
+            <li>Các kỹ thuật nén dữ liệu
+                <ul>
+                    <li>Các kỹ thuật nén cơ bản:</li>
+                    <ul>
+                        <li>Packed decimal</li>
+                        <li>Relative coding</li>
+                        <li>Character suppression</li>
+                        <li>Huffnam coding</li>
+                        <li>Run length coding - facsimile compression</li>
+                        <li>Đánh giá hiệu suất</li>
+                    </ul>
+                </ul>
+            </li>
+        </ol>
+        <ul>
+            <li>Hệ thống mã</li>
+            <li>Cấu hình kết nối cơ bản</li>
+            <li>Các kiểu thông tin</li>
+            <li>Các kiểu truyền
+                <ul>
+                    <li>Truyền song song</li>
+                    <li>Truyền nối tiếp</li>
+                </ul>
+            </li>
+            <li>Các kỹ thuật truyền</li>
+            <li>Hiệu suất truyền</li>
+            <li>Tốc độ truyền hữu dụng</li>
+        </ul>
+    </div>
+    <div c3>
+        <h1>CHƯƠNG 3: Các nghi thức lớp liên kết dữ liệu</h1>
+        <ol>
+            <li>Kiểm soát lỗi
+                <ul>
+                    <li>Forward error control</li>
+                    <li>Error detection + ARQ</li>
+                    <li>Ký hiệu</li>
+                    <li>Idle RQ
+                        <ul>
+                            <li>Hiểu ngầm</li>
+                            <li>Tường minh</li>
+                            <li>Hiệu suất sử dụng đường truyền</li>
+                        </ul>
+                    </li>
+                    <li>Continous RQ
+                        <ul>
+                            <li>Selective repeat</li>
+                            <li>Go back N</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Kiểm soát luồng
+                <ul>
+                    <li>X-on off</li>
+                    <li>Sliding Window</li>
+                    <li>Hiệu suất sử dụng đường truyền</li>
+                </ul>
+            </li>
+            <li>Quản lý kết nối</li>
+            <li>Nghi thức lớp liên kết dữ liệu
+                <ul>
+                    <li>Các kiểu liên kết:
+                        <ul>
+                            <li>Điểm điểm</li>
+                            <li>Đa điểm</li>
+                        </ul>
+                    </li>
+                    <li>Định hướng ký tự</li>
+                    <li>Định hướng bit</li>
+                </ul>
+            <li>BSC</li>
+            <li>HDLC</li>
+            </li>
+        </ol>
+        <ul>
+            <li>Đóng khung dữ liệu</li>
+        </ul>
+    </div>
+    <div c4>
+        <h1>CHƯƠNG 4: Mạng truyền số liệu</h1>
+        <ul>
+            <li>Địa chỉ IP: Subnet và VLSM
+                <ul>
+                    <li>IPv4</li>
+                    <li>Định dạng IP header</li>
+                    <li>Phân lớp địa chỉ IPv4</li>
+                    <li>Subnetting</li>
+                    <li>VLSM</li>
+                    <li>Thiết bị mạng
+                        <ul>
+                            <li>Hub.repeater</li>
+                            <li>Switch.bridge</li>
+                            <li>Router.3-layer switch</li>
+                            <li>Gateway</li>
+                        </ul>
+                    </li>
+                    <li>Định tuyến</li>
+                    <li>Giao thức định tuyến</li>
+                    <li>Giải thuật định tuyến: Link state</li>
+                    <li>Giải thuật Distance vector</li>
+                </ul>
+            </li>
+            <li>Routing static</li>
+        </ul>
+        <ul>
+            <li>Mạng cục bộ LAN</li>
+            <li>Mạng đô thị MAN</li>
+            <li>Mạng diện rộng WAN</li>
+            <li>Cấu trúc liên kết vật lý</li>
+            <li>Project 802</li>
+            <li>Định dạng khung LLC</li>
+        </ul>
+    </div>
+    <div giaide>
+        <h1>Giải đề</h1>
+        <p>Câu 1</p>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279858499_1043466702938031_7587062153021794153_n.png?_nc_cat=106&ccb=1-6&_nc_sid=aee45a&_nc_ohc=fKKV9EBLkasAX-Iozku&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIo6QPfDRqk7fZ04coM4vG8JtPs6gRizr63fvwbWXZyeA&oe=62A7411E"
+            alt="">
+        <br>
+        <p>Câu 2</p>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280301416_1063529557567811_8904417779262996091_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=jdnL1IM4bXgAX9qIDEv&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJW6FW6ZoG-elsmJWDC4Ek6ZQcTS_1vSDr606KoAhvtxw&oe=62A78F6E"
+            alt="">
+        <br>
+        <p>Câu 4</p>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280701825_452129790009963_7345002223413459156_n.png?_nc_cat=100&ccb=1-6&_nc_sid=aee45a&_nc_ohc=-8qew57XdroAX81G6-7&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIiRnU_-i_aWsxv_tRDFOQe8RfQpkgzOzgXFku9dZuySQ&oe=62A71F39"
+            alt="">
+        <br>
+        <p>Câu 5</p>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279576890_746742029845281_7104969493562616772_n.png?stp=dst-png_p403x403&_nc_cat=103&ccb=1-6&_nc_sid=aee45a&_nc_ohc=3swpzsNRA8YAX9k7wF-&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIWWkIv6C8jzfq-dgIJWnBbNakMtskHtMcgZFSem5hYyQ&oe=62A97902"
+            alt="">
+        <br>
+        <p>Khung tin cần truyền</p>
+        <p>DLE STX DLE DLE H 0 C * L A I ETX DLE ETX</p>
+        <p>_|-|_|-|-|_|-|-|-|-|_|-</p>
+        <p>Start - 7bit H - 1 bit parity - End - Start</p>
+        <p>Hiệu suất truyền, 7/10</p>
+        <p>Thời gian truyền: 14*10/1200 = 0.12s</p>
+    </div>
+</body>
+
+</html>

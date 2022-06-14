@@ -1,0 +1,150 @@
+
+#id_first{
+    color: orange;
+}
+.class_a{
+    color: var(--text-color);
+    font-size: 2rem;
+}
+:root{
+    --text-color: rgb(143, 79, 79);
+    --boxcolor: blue;
+}
+.boxa{
+    width: 50%;
+    height: 100px;
+    background-color: var(--boxcolor);
+}
+.boxb{
+    width: 30vw;
+    height: 30vh;
+    background-color: red;
+    color: white;
+    font-size: 2rem;
+}
+.box{
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: top;
+}
+.box1{
+    background-color: #333;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border: 10px dotted red;
+    margin: 10px 20px 10px 10px;
+}
+.box2{
+    background-color: orange;
+    padding: 10px;
+    border-style: solid;
+    border-width: 10px 20px 0px 0px;
+    border-color: yellow;
+    margin: 10px;
+}
+.box3{
+    background-color: firebrick;
+    padding: 2px 5px 10px 12px;
+    margin: 10px;
+}
+.xbox{
+    width: 200px;
+    height: 200px;
+    background-color: firebrick;
+    padding: 10px;
+    color: #fff;
+    font-size: 200%;
+    border: 10px solid blue;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    width: 100%;
+    height: 50vh;
+    background-image: linear-gradient(90deg, black, pink);
+    padding: 20px;
+    box-sizing: border-box;
+    border: 10px dashed pink;
+    background-clip: content-box;
+}
+.header2{
+    margin: 10px 0px 0px 0px;
+    width: 100%;
+    height: 100vw;
+    padding: 10px;
+    border: 10px dashed pink;
+    background-image: 
+    linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(255, 190, 200, 0.3)),
+    url(https://i.pinimg.com/564x/33/c1/01/33c1014cf438846a4f104caa6fe89cd6.jpg);
+    background-clip: content-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+.header3{
+    width: 200px;
+    height: 40vh;
+    margin: 50px;
+    background: 
+    url(https://i.pinimg.com/736x/10/42/b5/1042b59e522de9568c71e88c39e8ec4a.jpg) 
+    no-repeat top 20px left / contain;
+}
+a::after{
+    content: " (" attr(href) ")";
+}
+.xbox::after{
+    content: " " attr(data-title);
+}
+.redhover:hover{
+    color: white;
+    background-color: red;
+}
+.background{
+    width: 100%;
+    height: 100px;
+    background-color: #333;
+}
+.blueactive:active{
+    color: white;
+    background-color: blue;
+}
+li:first-child{
+    color: green;
+}
+li:last-child{
+    color: brown;
+}
+.background::before{
+    content: "hello";
+    color: white;
+    width: 50px;
+    height: 25px;
+    background-color: red;
+    display: block;
+}
+.background::after{
+    content: "bye";
+    color: white;
+    width: 50px;
+    height: 25px;
+    background-color: blue;
+    display: block;
+}
+.fletter::first-letter{
+    font-size: 50px;
+}
+.fline::first-line{
+    color: pink;
+}
+.se::selection{
+    color: red;
+    background-color: violet;
+}

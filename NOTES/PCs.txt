@@ -1,0 +1,3 @@
+PCs{
+    rightclick: ctrl F10
+}

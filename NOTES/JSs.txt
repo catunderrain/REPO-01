@@ -1,0 +1,12 @@
+links{
+    https://toidicode.com/hoc-javascript-co-ban?page=4
+    https://freetuts.net/hoc-javascript
+}
+booklinks{
+    https://toidicodedao.com/2018/03/06/tong-hop-sach-hay-ve-javascript-tu-nhap-mon-den-nang-cao/
+    https://hocjavascript.net/tong-quan/10-sach-hay-nen-doc-ve-javascript/
+}
+{
+    dir, ltr or rtl: set the view direction
+    meta tag: https://www.w3schools.com/tags/tag_meta.asp
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div c1>
+        <h1>Chương 1: Giới thiệu</h1>
+        <ol>
+            <li>Giới thiệu về hệ thống xử lý số tín hiệu
+                <ul>
+                    <li>Tín hiệu</li>
+                    <li>Hệ thống</li>
+                    <li>Xử lý số tín hiệu - DSP</li>
+                </ul>
+            </li>
+            <li>Ưu điểm của xử lý số tín hiệu</li>
+            <li>Phân loại tín hiệu
+                <ul>
+                    <li>Theo thời gian: liên tục, rời rạc</li>
+                    <li>Theo biên độ: analof, tín hiệu số</li>
+                    <li>Theo số kênh: đơn kênh, đa kênh</li>
+                    <li>Theo số chiều: một chiều, nhiều chiều</li>
+                    <li>Tín hiệu xác định, tín hiệu ngẫu nhiên</li>
+                </ul>
+            </li>
+            <li>Một số ứng dụng của XLSTH</li>
+            <li>Các kiến thức cần xem lại:
+                <ul>
+                    <li>Chuỗi F phức</li>
+                    <li>Biến đổi F, biến đổi L</li>
+                    <li>Hệ thống LTI</li>
+                    <li>Đáp ứng xung - Hàm truyền - Đáp ứng tần số</li>
+                    <li>Bộ lọc</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div c2>
+        <h1>Chương 2: Lấy mẫu và khôi phục tín hiệu</h1>
+        <p>Nhắc lại về tín hiệu analog
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280296990_1015470585758658_7379468875385174933_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=8ZDYpx_Ws5gAX_d3l2s&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLYHUKnVgMxZKS9b_i0pfp3tz0JNhqUf3Jhc5TJvL_f6Q&oe=62AB9AE0"
+                alt="">
+            <br>
+        </p>
+        <p>Nhắc lại về hệ thống LTI liên tục
+            <img src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.15752-9/280759929_2182960958523348_3563830225427399736_n.png?_nc_cat=101&ccb=1-6&_nc_sid=aee45a&_nc_ohc=u0dZ52x6SYIAX8FG1hX&_nc_ht=scontent.fsgn2-4.fna&oh=03_AVLWkYSl9JMGwOFZ-6AZdQLxPnHy4cQnqWkPNHHNObzjFQ&oe=62AA9EE8"
+                alt="">
+            <br>
+        </p>
+        <ol>
+            <li>Định lý lấy mẫu
+                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280049131_736282864045205_4672887481250279301_n.png?_nc_cat=104&ccb=1-6&_nc_sid=aee45a&_nc_ohc=n8-TS4vOnnkAX9GnYRL&_nc_oc=AQlNRwXyQATmrFuWMXZSVqyb2RWyTga9vt8MOT-k_QetfV6V5CFy-o7xH5SrkmIdv5hqwGSvrVC5OlNzduJib0rl&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJDYO1gPXAeLSMEgHQRKq73M6PRxZ1_ZgjoS3wuJxpMkA&oe=62AA12F9"
+                    alt="">
+                <br>
+            </li>
+            <li>Bộ lọc chống chồng lấn phổ (bt)
+                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280727711_1171690993684568_2456831378326706362_n.png?_nc_cat=107&ccb=1-6&_nc_sid=aee45a&_nc_ohc=uvWlFFpuDl4AX8DmtCN&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKG0gWpfMMZkEr9ySqOZGv6qXJDTGZ8-eNeAOXb0ggikg&oe=62AAAC49"
+                    alt="">
+                <br>
+                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280727711_1171690993684568_2456831378326706362_n.png?_nc_cat=107&ccb=1-6&_nc_sid=aee45a&_nc_ohc=uvWlFFpuDl4AX8DmtCN&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKG0gWpfMMZkEr9ySqOZGv6qXJDTGZ8-eNeAOXb0ggikg&oe=62AAAC49"
+                    alt="">
+                <br>
+            </li>
+            <li>Khôi phục tín hiệu tương tự</li>
+            <li>Lượng tử và mã hóa</li>
+            <li>Kỹ thuật quá lấy mẫu và định dạng nhiễu</li>
+        </ol>
+    </div>
+    <div c3>
+        <h1>Chương 3: Hệ thống rời rạc theo thời gian</h1>
+        <ol>
+            <li>Mối quan hệ ngõ vào/ngõ ra</li>
+            <li>Tính tuyến tính và tính bất biến</li>
+            <li>Đáp ứng xung - bộ lọc IIR và FIR</li>
+            <li>Tính nhân quả và tính ổn định</li>
+            <li>Bộ lọc FIR và tích chập</li>
+        </ol>
+    </div>
+    <div c4>
+        <h1>Chương 4: Biến đổi Z</h1>
+        <li>Biến đổi Z</li>
+        <li>Tính chất của biến đổi Z</li>
+        <li>Tính nhân quả và ổn định</li>
+        <li>Biến đổi Z ngược</li>
+        <li>Hàm truyền và phân tích hệ thống</li>
+    </div>
+    <div c5>
+        <h1>Chương 5: Phân tích tín hiệu và hệ thống trong miền tần số</h1>
+        <ol>
+            <li>Biến đổi F của tín hiệu rời rạc</li>
+            <li>Biến đổi F rời rạc</li>
+            <li>Biến đổi F nhanh</li>
+        </ol>
+    </div>
+    <div c6>
+        <h1>Chương 6: Thực hiện hệ thống số</h1>
+        <ol>
+            <li>Dạng trực tiếp</li>
+            <li>Dạng chính tắc</li>
+            <li>Dạng cascade</li>
+        </ol>
+    </div>
+</body>
+
+</html>

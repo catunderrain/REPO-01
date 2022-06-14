@@ -1,0 +1,19 @@
+shortcuts{
+    20 phim tat trong visual
+    ctrl shift tab: chuyển đến tab kế tiếp
+    ctrl shift U: bật tab output
+    ctrl `: bật terminal, chuyển trỏ về terminal
+    ctrl shift `: bật và làm mới terminal
+    ctrl shift M: hiện bảng problem
+    ctrl B: ẩn hiện slidebar
+    ctrl L: chọn dòng hiện tại
+    ctrl G: chuyển đến dòng mong muốn
+    ctrl shift K: xóa dòng ngay con trỏ
+    alt arrow: lên xuống dòng
+    ctrl .: khắc phục lỗi nhanh
+    ctrl F, F3, shift F3: tìm, di chuyển
+    ctrl shift F: tìm trong slidebar
+    ctrl K, nhả, S: save all file
+    ctrl W: đóng tab hiện tại
+    ctrl shift T: mở lại file vừa đóng
+}

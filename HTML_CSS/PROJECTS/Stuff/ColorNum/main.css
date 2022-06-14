@@ -1,0 +1,44 @@
+* {
+    font-size: 30px;
+}
+
+.one {
+    color: red;
+}
+
+.two {
+    color: orange;
+}
+
+.three {
+    color: yellow;
+}
+
+.four {
+    color: green;
+}
+
+.five {
+    color: blue;
+}
+
+.six {
+    color: teal;
+}
+
+.seven {
+    color: pink;
+}
+
+.eight {
+    color: purple;
+}
+
+.nine {
+    color: white;
+    background-color: black;
+}
+
+.zero {
+    color: black;
+}

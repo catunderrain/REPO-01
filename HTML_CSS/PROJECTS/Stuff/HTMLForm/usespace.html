@@ -1,0 +1,33 @@
+<html>
+
+<HEAD>
+    <TITLE>Example 3.3</TITLE>
+    <SCRIPT lang="javascript">
+        var question = "What is 10+10 ?";
+        var answer = 20;
+        var correct = '<IMG SRC="https://scontent.fsgn8-2.fna.fbcdn.net/v/t39.30808-6/285436109_151208197444731_5861687621615062852_n.jpg?stp=dst-jpg_p75x225&_nc_cat=100&ccb=1-7&_nc_sid=dbeb18&_nc_ohc=Mi3h6vhCNM8AX_3QER0&_nc_ht=scontent.fsgn8-2.fna&oh=00_AT_vkLi9PewZKFhV5GQmfiMfPWgSoHiZIAKaxkf1A3AHGQ&oe=629C92FD">';
+        var incorrect = '<IMG SRC="incorect.gif">';
+        var response = prompt(question, "0");
+        if (response != answer) {
+            if (confirm("Wrong ! press OK for a second change"))
+                response = prompt(question, "0");
+        } else {
+            if (confirm("Correct ! press OK for a second question")) {
+                question = "What is 10*10";
+                answer = 100;
+                response = prompt(question, "0");
+            }
+        }
+        var output = (response == answer) ?
+            correct : incorrect;
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <SCRIPT LANGUAGE="Javascript">
+
+        document.write(output);
+    </SCRIPT>
+</BODY>
+
+</html>

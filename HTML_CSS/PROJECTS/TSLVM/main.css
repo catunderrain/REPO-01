@@ -1,0 +1,21 @@
+.box {
+    background-color: firebrick;
+    padding: 10px 5px 10px 5px;
+    color: wheat;
+    border: 5px dotted wheat;
+}
+
+.red:hover {
+    color: pink;
+    background-color: black;
+    padding: 10px 0px 10px 100px;
+    width: 500px;
+    border: 10px dotted pink;
+    text-align: justify;
+    background-clip: padding-box;
+}
+
+h1 {
+    font-size: 25px;
+    color: firebrick;
+}

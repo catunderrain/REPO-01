@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TSLVM</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="main.css">
+    <a class="box" href="http://e-learning.hcmut.edu.vn/">MyBK</a>
+    <a class="box" href="https://www.youtube.com/">Youtube</a>
+    <a class="box" href="https://www.pinterest.com/">Pinterest</a>
+    <a class="box" href="https://www.facebook.com/">Facebook</a>
+    <a class="box" href="https://www.messenger.com/t/100045983445230/">Messenger</a>
+    <a class="box" href="https://mail.google.com/mail/u/6/">MailBK</a>
+</head>
+
+<body>
+    <div c0>
+        <h2>CHƯƠNG 0: Mô hình OSI</h2>
+        <p>OSI: Open System Interconnection</p>
+        <ol>
+            <li>Physical</li>
+            <li>Data Link</li>
+            <li>Network</li>
+            <li>Transport</li>
+            <li>Session</li>
+            <li>Presentation</li>
+            <li>Application</li>
+        </ol>
+    </div>
+    <div c1>
+        <h2>CHƯƠNG 1: Lớp vật lý và phương tiện truyền dẫn</h2>
+        <h3>1.1 Truyền dẫn có dây - wire media</h3>
+        <div>
+            <h4>Cáp song hành - two wire open lines</h4>
+            <p>
+                Truyền dữ liệu tốc độ thấp trong khoảng cách ngắn <br>
+                Ưu điểm: Cấu tạo đơn giản <br>
+                Nhược điểm:
+            <ul>
+                <li>Tốc độ truyền dữ liệu thấp R <= 19Kps</li>
+                <li>Khoảng cách tối đa L <= 50m</li>
+                <li>Dễ bị tác động bởi nhiễu xuyên kênh - crosstalk</li>
+                <li>Nhạy với nhiễu điện trường từ - EMI</li>
+            </ul>
+            </p>
+            <h4>Cáp xoắn - twisted pair cables</h4>
+            <p>
+                Dùng làm cáp truyền điện thoại hoặc truyền dữ liệu trong các hệ thống truyền thông tin <br>
+                Dùng chủ yếu trong mạng điện thoại và mạng LAN <br>
+                Cải thiện khả năng chống nhiễu điện trường EMI so với cáp song hành <br>
+                Giảm nhiễu xuyên kênh giữa các cặp dây <br>
+                Có 3 loại chính: <br>
+            <ol>
+                <li>UTP - unshield tp <br>
+                    Trở kháng 100ohm <br>
+                    Khoảng cách tối đa 100m <br>
+                    Chi phí thấp</li>
+                <li>ScTP - Screen tp <br>
+                    Trở kháng 100ohm <br>
+                    Khoảng cách tối đa 100m <br>
+                    Chi phí trung bình</li>
+                <li>STP - Shield tp <br>
+                    Trở kháng 150ohm <br>
+                    Khoảng cách tối đa 100m <br>
+                    Chi phí cao</li>
+            </ol>
+            Thẳng: Sw - router, Sw - pc/sv, Hub - pc/sv <br>
+            Chéo: Sw - Sw, Hub - Hub, router - router, pc - pc, Sw - Hub, router - pc <br>
+            TD+ TD- RD+ NC MC RD- NC MC: chéo, TD+ to RD+, TD- to RD- <br>
+            </p>
+            <h4>Cáp đồng trục - Coaxial Cables</h4>
+            <p>
+                Dùng trong mạng máy tính, hệ thống truyền dữ liệu DataSystem, CATV, Mạng truyền hình cá nhân <br>
+                Ưu điểm: Khả năng chống nhiễu điện trường tốt EMI, tốc độ truyền đến 10Mps với khoảng cách vài trăm mét
+                <br>
+                Nhược điểm: Có nhiều trở kháng đặc tính khác nhau nên chỉ được sử dụng riêng biệt trong từng hệ thống
+                <br>
+                Gồm 3 loại chính: <br>
+            <ol>
+                <li>RG-6/RG-59: 75ohm, dùng trong hệ thống CATV</li>
+                <li>RG-8/RG-58: 50ohm, dùng trong mạng Thick Ethernet LANs hoặc Thin Ethernet LANs</li>
+                <li>RG-62: 93ohm, dùng trong Mainframe IBM</li>
+            </ol>
+            </p>
+            <h4>Cáp quang - Optical Fiber Cables</h4>
+            <p>
+                Ánh sáng trong cáp quang là một loại năng lượng điện từ, bước sóng được xác định bằng tần suất điện tích
+                tạo ra <br>
+                Phản xạ Reflection và khúc xạ Refraction <br>
+                Tia sóng điện từ hướng ra khỏi nguồn, tia sáng tới chiếu và bề mặt sáng bóng, một phần năng lượng ánh
+                sáng bị phản xạ lại <br>
+                Ưu điểm: Tốc độ truyền cao, băng thông rộng, khả năng chống nhiễu rất cao <br>
+                Nhược điểm: Giá thành cao, lắp đặt phức tạp, ảnh hưởng bởi sự tán xạ, sự hấp thụ, phân tán và các yếu tố
+                trong quá trình sản xuất không đồng nhất <br>
+                Gồm 3 loại chính:
+            <ul>
+                <li>Step Index Multimode: 500m</li>
+                <li>Grade Index Multimode: 1000m</li>
+                <li>Single mode: vài km</li>
+            </ul>
+            Nguồn sáng tín hiệu: LED bước sóng 850nm hoặc 1310nm, sử dụng trong miltimode <br>
+            Nguồn laser có bước sóng 1310nm hoặc 1550nm với single mode <br>
+            </p>
+            <h4>Quá trình phát triển và tiêu chuẩn của cáp</h4>
+            <p>
+                Cabling evolution
+            <ul>
+                <li>Telephone</li>
+                <li>Informatics</li>
+                <li>Unstructured</li>
+                <li>Structured</li>
+                <li>...</li>
+            </ul>
+
+            </p>
+        </div>
+        <h3>1.2 Truyền dẫn không dây - wireless media</h3>
+        Vi ba vệ tinh và Vi ba mặt đất: <br>
+        Ưu điểm: không cần sử dụng cáp, băng thông rộng, truyền dữ liệu đa kênh <br>
+        Nhược điểm: Yêu cầu truyền dẫn line-of-sight, chi phí triển khai và thay thế cao, chịu nhiều ảnh hưởng: thời
+        tiết, máy bay, ... <br>
+        <div>
+            <h4>Vi ba vệ tinh - satellite microwave</h4>
+            <p>
+                LEO - low earth orbit: 0 - 5,000km <br>
+                MEO - medium earth orbit: 5,000 - 15,000km <br>
+                GEO - geosynchronous equatorial orbit - quỹ đạo địa đồng bộ: 15,000 - 35,786km <br>
+                Ứng dụng: Phát thanh, truyền hình; điện thoại, đường dài; mạng cá nhân <br>
+                Băng tầng: <br>
+                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279640893_3117262811856921_4185139145857073736_n.png?_nc_cat=107&ccb=1-6&_nc_sid=aee45a&_nc_ohc=rjl8beo-FTYAX8_hqVZ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJih3bObW178xnQm8ijD4Md7NErKhooR-FNRh8HhPsXxw&oe=62A5493B"
+                    alt="">
+            </p>
+            <h4>Vi ba mặt đất - terrestrial microwave</h4>
+            <p>
+                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279773383_2596805263787628_9133259267631972585_n.png?_nc_cat=101&ccb=1-6&_nc_sid=aee45a&_nc_ohc=KszgO3Mx4ZkAX90VBt9&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVL5jmwjIh_NrRnWYb_uyNmoyizGq7SUGOMXmnXcRU2KxQ&oe=62A63161"
+                    alt="">
+                <br>
+                Ứng dụng: Các dịch vụ điện thoại đường dài; hệ thống truyền dẫn - common carriers; mạng cá nhân <br>
+                Đặc điểm:
+            <ul>
+                <li>Sử dụng sóng mặt đất</li>
+                <li>Line-of-sight</li>
+                <li>Dãi tần số hoạt động từ 2 - 40GHz</li>
+                <li>Nhạy với vật chắn và sự thay đổi của môi trường</li>
+            </ul>
+            </p>
+            <h4>Hồng ngoại - infrared</h4>
+            <p>
+            <ul>
+                <li>Sử dụng sóng ánh sáng để truyền tín hiệu</li>
+                <li>Các thiết bị thu phát phải không bị che chắn</li>
+                <li>Ứng dụng: Truyền tải thông tin trong mạng nhỏ, pc-pc, moblie-mobile, pc-mobile, ...</li>
+            </ul>
+            </p>
+        </div>
+        <h3>1.3 Các chuẩn giao tiếp lớp vật lý: RS232, RS422, RS485</h3>
+        <div>
+            Nội dung:
+            <ul>
+                <li>Xác định dạng tín hiệu được truyền đi</li>
+                <li>Xác định các kết nối vật lý</li>
+                <li>Phương thức truyền tín hiệu</li>
+            </ul>
+            Các chuẩn thông dụng:
+            <ul>
+                <li>RS232</li>
+                <li>RS422</li>
+                <li>RS485</li>
+            </ul>
+            <p>
+            <h5>RS232</h5>
+            Là chuẩn giao tiếp phổ biến để kết nối modem và thiết bị thu thập dữ liệu với máy tính <br>
+            Có thể cắm thẳng cào cổng nối tiếp của máy tính COM <br>
+            Các đặc tính:
+            <ul>
+                <li>Khoảng cách < 15m</li>
+                <li>Tốc độ truyền < 20Kps</li>
+                <li>Áp từ -15V đến +15V: bit 1 (-15 -3)V, bit 0 (+3 +15)v</li>
+            </ul>
+            Tín hiệu không cân bằng <br>
+            Nhược điểm: ảnh hưởng bởi nhiễu, khoảng cách ngắn <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279803456_1441942136262017_6149002158364538418_n.png?_nc_cat=107&ccb=1-6&_nc_sid=aee45a&_nc_ohc=VBI56kTGYF8AX82UT4Y&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVISbz6WyurSqGqJk96rauA_B5b9fliBnWvTaGjC-KJNNw&oe=62A5B74D"
+                alt="">
+            <br>
+            Kết nối vật lý: dùng cổng kết nối DB25(ISO2110) hoặc DB9 <br>
+            Đọc thêm slide chương 1 từ trang 59
+            <h5>RS422</h5>
+            Tín hiệu cân bằng, được truyền trên 2 đường, khoảng cách xa 1500m <br>
+            Bit 1 (+V -V), bit 0 (-V +V) <br>
+            truyền dẫn cắp xoắn đôi, điện áp +-6V, tốc độ 100kbps - 10Mps, drivers: 1 driver, 10 receivers <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279741771_299309602406840_8379943949100057526_n.png?_nc_cat=109&ccb=1-6&_nc_sid=aee45a&_nc_ohc=iRkJTydYEN4AX_vj-9_&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIbdsGEdCXpHVjm1HvFJg5M8H8Sj21PVLc2sdww6BZIxw&oe=62A65BDF"
+                alt="">
+            <br>
+            <h5>RS485</h5>
+            Là một chuẩn giao tiếp EIA được dùng rất phổ biến <br>
+            Sử dụng đường truyền cân bằng cho phép truyền tốc độ cao và xa <br>
+            Cho phép giao tiếp đa dạng theo dạng bus. Số trạm slave có thể lên đến 255 <br>
+            Khoảng cách tối đa 1200m tốc độ 100kbps <br>
+            Khoảng cách 15m tốc độ 10Mps <br>
+            Truyền bán song công khi sử dụng 2 dây và song công khi dùng 4 dây <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279171594_394794729203027_2302645216067060731_n.png?_nc_cat=104&ccb=1-6&_nc_sid=aee45a&_nc_ohc=DCpjQB81yd8AX-ylTct&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJ0iFgx7kzN27UD440VITsl9UdH6H6--jnOARBhLpVj9A&oe=62A56A58"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279665342_377343471014941_3053695086160231863_n.png?_nc_cat=108&ccb=1-6&_nc_sid=aee45a&_nc_ohc=G-fOMKTTN40AX-xZN6y&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVK25a6zqis5841a2g0bH4P5L05C08hZgvRwmBPD163Kfg&oe=62A4734A"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280273663_421777579336034_5670859381617691758_n.png?_nc_cat=104&ccb=1-6&_nc_sid=aee45a&_nc_ohc=QRj6ESl362YAX9fpOZv&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJV5CHYQrIhXcazRd2HPswzoBdSL24hLFZW_jtSDkpGCQ&oe=62A5301F"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279560935_573509857395510_1012156614737243746_n.png?_nc_cat=104&ccb=1-6&_nc_sid=aee45a&_nc_ohc=GHoEE0oDD6IAX_DgoPZ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVI2azM-BB_y6yd6ky4ZforMILiF70OI_r3DniPzoryQhg&oe=62A3F650"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279680099_523845979435608_9174353346647686085_n.png?_nc_cat=103&ccb=1-6&_nc_sid=aee45a&_nc_ohc=E_tnNVatRngAX_pc5pU&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJMn8KexqNeB6GhSY5UmWibaF6sP5NS8bQAFERCZSk-tQ&oe=62A64B8F"
+                alt="">
+            <br>
+            </p>
+        </div>
+        <h3>1.4 Các kỹ thuật mã đường dây - line codes</h3>
+        <div>
+            Biểu diễn dữ liệu số bằng cách dùng tín hiệu số <br>
+            Gồm 3 kỹ thuật:
+            <ul>
+                <li>line coding</li>
+                <li>block coding</li>
+                <li>scrambling</li>
+            </ul>
+            Line coding luôn cần thiết, 2 cái còn lại có thể cần hoặc không <br>
+            <p>
+                Dữ liệu truyền:
+            <ul>
+                <li>1 phần tử tín hiệu = 1 ký kiệu</li>
+                <li>phần tử dữ liệu: bit 1 hoặc bit 0</li>
+                <li>r: là số phần tử dữ liệu được mang bởi 1 phần tử tín hiệu</li>
+            </ul>
+            Line coding:
+            <ul>
+                <li>Phổ tín hiệu: không có thành phần tần số cao, không có thành phần DC</li>
+                <li>Đồng bộ: đồng bộ giữa máy phát và máy thu, dùng clock ngoài, tạo cơ chế đồng bộ dựa trên tín hiệu
+                </li>
+                <li>Có thể phát hiện sai</li>
+            </ul>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279576201_1497475187376582_7551935748214149736_n.png?_nc_cat=103&ccb=1-6&_nc_sid=aee45a&_nc_ohc=VISsCO4Zk9YAX_7O4cp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJRsyTyG99zn6Lxkq_ZerCjoIQjWZYekiHFkwQ8T6UpOQ&oe=62A5FB15"
+                alt="">
+            <br>
+            </p>
+            <p>
+                Ảnh hưởng của mất đồng bộ: <br>
+                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280256963_497113118813561_5279233168651562700_n.png?_nc_cat=100&ccb=1-6&_nc_sid=aee45a&_nc_ohc=zE0HTGOst8UAX_gEc4K&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVL8HAy8CYybJDp2pANcqH_fwp4SYwwKIGy6ro04GM7ZHQ&oe=62A6BFC1"
+                    alt="">
+                <br>
+                vi = 1000bps, vo = 100.1% vi = 1001bps, 1 giây nhận 1001 bit ở output <br>
+            </p>
+            <p>
+            <h6>UNIPOLAR NRZ</h6>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280141242_1136250813838414_2393154426805320599_n.png?_nc_cat=108&ccb=1-6&_nc_sid=aee45a&_nc_ohc=QNXQ9m81cE4AX-EJeu3&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJchu4ps5a8eHuxu3EPcBGAneFBvyD53kfmhTH3ewwaNQ&oe=62A62176"
+                alt="">
+            <br>
+            <h6>POLAR NRZ-L NRZ-I</h6>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279809261_385190836852646_595117151931771715_n.png?_nc_cat=103&ccb=1-6&_nc_sid=aee45a&_nc_ohc=DdrjX8FDIsoAX_xlbYw&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJl2YSshqlygRZOOky6n3QFUEm8vRUjCmcC1X1ta4ke4A&oe=62A6B2D4"
+                alt="">
+            <br>
+            <h6>POLAR NRZ</h6>
+            Ưu điểm: dễ dàng thực hiện, sử dụng băng thông tốt <br>
+            Nhược điểm: có thành phần DC, thiếu khả năng đồng bộ <br>
+            Được sử dụng trong máy ghi từ <br>
+            Thường không được sử dụng cho truyền dẫn <br>
+            <h6>POLAR RZ</h6>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279813825_2912862529016998_4061996198512648540_n.png?_nc_cat=104&ccb=1-6&_nc_sid=aee45a&_nc_ohc=Yo-KUrnkHoEAX839jYN&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJv_ztNrFYDGZtxdUSJyxTrYgce2eamf9BNA5fxjlCyaw&oe=62A4C3F6"
+                alt="">
+            <br>
+            <h6>BI-PHASE</h6>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279758352_5136273929785780_1999763129903379640_n.png?_nc_cat=111&ccb=1-6&_nc_sid=aee45a&_nc_ohc=cUWky9f9y5wAX_iylPI&_nc_oc=AQk05A6AAZMfxGDWOfv_-dHUIVE9-Z265-zCUdTsWFyiZs6zOppbXMEgjV_OKK_U3pzFNm1fHmhpSHCsOTA5xOd9&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIPO8kgFIp-ZDQ285a2l00h7VWt-rLg6bnDqAyghdlWXA&oe=62A3AFD4"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280642659_757102461950664_1392752743919518569_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=66JAYVtSFoUAX-sPSU1&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJqxJMGClfZ4OtvYQbuNr872HQAR25svbbXmx-VOvOXOQ&oe=62A437E3"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279683444_525590229234894_4547196306894556917_n.png?_nc_cat=107&ccb=1-6&_nc_sid=aee45a&_nc_ohc=psz0e9gpO-4AX-wiJ01&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJJDldIUCL01KfeJrchTFq3pdxU2oz-mj4yBhtqc3zizg&oe=62A5C064"
+                alt="">
+            <br>
+            <h6>BIPOLAR-AMI</h6>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279968625_1250841232405548_7635683226402705949_n.png?_nc_cat=110&ccb=1-6&_nc_sid=aee45a&_nc_ohc=PolCdp4BE_IAX8DZ_CR&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKYqPjWbKrEklaU7NlDM3XD_L-3jisQUciV-36eQpDuXQ&oe=62A45787"
+                alt="">
+            <br>
+            <h6>BIPOLAR-sCRAMBLING</h6>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280056541_426271052169847_7015080155210838648_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=gcU96f5DDFMAX8mr0XX&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVILACQMdDAmfkE4ZQExo4z5GNz8O6ImyG2HwkyT6PQ7JQ&oe=62A584CF"
+                alt="">
+            <br>
+            <h6>BIPOLAR-B8ZS</h6>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280285142_368862591951224_7770961681823385441_n.png?_nc_cat=102&ccb=1-6&_nc_sid=aee45a&_nc_ohc=WYcTUNnkMtUAX_thp2l&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVL7QIEhPQXpDKh4RKMOYNFfXhKS6wMov54OEJ0jRRW02w&oe=62A496C3"
+                alt="">
+            <br>
+            <h6>BIPOLAR-HDB3</h6>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279579118_262409382711792_2207387808402119304_n.png?_nc_cat=111&ccb=1-6&_nc_sid=aee45a&_nc_ohc=6zCG0flFJPMAX-TkkmY&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLA7mqsHXliYRFJa3MxExNlDeXHdYQbynuhKBIxh40Wjg&oe=62A4C5EF"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280087940_1309202046270473_8126827634269848420_n.png?_nc_cat=108&ccb=1-6&_nc_sid=aee45a&_nc_ohc=LFiFTNzkL08AX-KznRt&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKcaxbiZ5Cftl5dOie-aYhmqepFgwSAVK6-r9x8SkDXbA&oe=62A548E6"
+                alt="">
+            <br>
+            </p>
+        </div>
+        <h3>1.5 Kênh truyền</h3>
+        <div>
+            <p>
+            <h4>ROUNDTRIP TIME - RTT</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279518875_459852275892477_7007460583697872263_n.png?_nc_cat=110&ccb=1-6&_nc_sid=aee45a&_nc_ohc=8v-0ysqnbf4AX-13vI9&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLWUKfhzwILU9A8dmHHWMpFzSSr1f_1V3DKNh8CmJflMw&oe=62A3464F"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279714289_553057016354965_1749917058498356050_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=FZIu0gEOoDcAX_yUQ18&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVK3HwjSLEmlVpQASD8yOjd6JGbhDUb88ib8DXPvvrAXwQ&oe=62A456FE"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279585346_548025816882391_5815830886879534449_n.png?_nc_cat=109&ccb=1-6&_nc_sid=aee45a&_nc_ohc=HDhP3UsKP2wAX-Qd4MO&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLnnqrN-KEiKSXKDBx0ieGM0GPgmmp5Xpp-jttVJyWiPw&oe=62A4AEC5"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279743664_1143019946271071_863356147396105996_n.png?_nc_cat=103&ccb=1-6&_nc_sid=aee45a&_nc_ohc=G8EfL7wfu_gAX_WZc_K&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVI0CDThXvXSfLgTA2nQJ1iyTpAZDw5SKpecSIz-EwXDQQ&oe=62A69CF3"
+                alt="">
+            <br>
+            </p>
+            <p>
+            <h4>KÊNH TRUYỀN</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279523022_1141712379956547_398947300057461728_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=S6LZ83ArbFgAX-8wgx0&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVL5H-MuOiIH8KXfg1b-SiujKVMzy6pcOAexasHHLjO9Lg&oe=62A3A27E"
+                alt="">
+            <br>
+            </p>
+            <p>
+            <h4>SUY GIẢM ĐƯỜNG TRUYỀN</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279744261_583998519521473_2395124501259412189_n.png?_nc_cat=101&ccb=1-6&_nc_sid=aee45a&_nc_ohc=L6bZ5Bu31mcAX-HgjIN&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVK7NHCCCl5A_thGj1V4hV1eG7Me0SqKFBIOQ2y8QUdIFw&oe=62A54239"
+                alt="">
+            <br>
+            </p>
+            <p>
+            <h4>SUY HAO</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279477108_564502848359677_3831369622906527359_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=GcwRwTgt7fkAX_ekYmx&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJevXDlplNdZub09M-wiINKIGFOq788L3_e7qY9f8MTzg&oe=62A32C42"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279583921_1703337320005658_3108813237866509084_n.png?_nc_cat=102&ccb=1-6&_nc_sid=aee45a&_nc_ohc=X-Tz0BlJb6wAX_u0WiC&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIo9nGgyJ9TfFDXQS6nI9hmSD4DKIfI6GffPYKrPYz5aw&oe=62A6BFE3"
+                alt="">
+            <br>
+            </p>
+            <p>
+            <h4>MÉO DẠNG VÀ NHIỄU</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280182730_306312271685834_7823498765735363046_n.png?_nc_cat=106&ccb=1-6&_nc_sid=aee45a&_nc_ohc=7EGOl9YG9D8AX_Tm2uc&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLYUmQEtRkrcNGosLth1oqGz_-pnMx6D7eLr_HNiDYRjg&oe=62A59580"
+                alt="">
+            <br>
+            </p>
+            <p>
+            <h4>SNR</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280232317_687131329222902_6801377353316952069_n.png?_nc_cat=100&ccb=1-6&_nc_sid=aee45a&_nc_ohc=uA8chKYTExcAX_qxSCz&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKh1Dd9T0VJxIfSvrK4urXebYc1yVVFfJQZaf0HpL3K7A&oe=62A4B946"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279680099_382109757185586_8727122617227456426_n.png?_nc_cat=107&ccb=1-6&_nc_sid=aee45a&_nc_ohc=FYxSw0YZxzwAX-uIT9s&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKkirHqhBLW8RVvFip9VN-7APXDff32XJdcmX7uT82OJw&oe=62A6283B"
+                alt="">
+            <br>
+            10,000, 40dB <br>
+            </p>
+            <p>
+            <h4>DUNG LƯỢNG ĐƯỜNG TRUYỀN</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279916181_949478159051750_6213666230103217650_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=Kopa8xqfc4sAX-seHlw&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLZlBDIjOAskYmF3AC6tj4F82wFIgASyRioXjL5uZgmWg&oe=62A5F8C4"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279922585_3292423801039529_4893725878093822637_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=MT7h5womcbgAX9ArPtO&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIMGWDJBtNDDXjLjXmZa4hQ8yb2tb3NIuyemOMGQGrnMw&oe=62A4E9BC"
+                alt="">
+            <br>
+            </p>
+        </div>
+        <h3>1.6 Nhiễu Gauss và tỷ lệ lỗi bit</h3>
+        <div>
+            <p>
+            <h4>NHIỄU GAUSS</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279217050_407452254575113_5289097198767820481_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=7ydIzeTzm0IAX-ieGVw&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJSCYx9ALiFYqgTujZqao4jhSDYsEK60nOv_80zMeMymA&oe=62A4217B"
+                alt="">
+            <br>
+            </p>
+            <p>
+            <h4>LỖI BIT</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279281720_304750791694788_34367384390625656_n.png?_nc_cat=102&ccb=1-6&_nc_sid=aee45a&_nc_ohc=tjga3rvK1EUAX9mhmru&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVK9L0gq3kTN7vtF1KY-ajMQJMbav90jetTqZgFCSz9CXg&oe=62A568E3"
+                alt="">
+            <br>
+            </p>
+            <p>
+            <h4>NHIỄU GAUSS VÀ TỶ LỆ LỖI BIT</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280631093_390165646370391_5181580364077285533_n.png?_nc_cat=101&ccb=1-6&_nc_sid=aee45a&_nc_ohc=XROQ5VcGrDcAX8dzs86&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIPmhkjXGHCivig8YQ9ty5FE1-9yCH3Ryt2K-ZPEglcNw&oe=62A60264"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279573992_1076964089885672_6232313955016768501_n.png?_nc_cat=106&ccb=1-6&_nc_sid=aee45a&_nc_ohc=AS_1oegyUwIAX-7TIdd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLIiLHHcGusRBbaFF77L861WP60USY5RCI46cRMwOCmTw&oe=62A5997A"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/277995133_539385290966600_693215909468399898_n.png?_nc_cat=106&ccb=1-6&_nc_sid=aee45a&_nc_ohc=cJEC8DN72-UAX99Tnev&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIDxXcVcGXc114Ae9lkvZedRcyK2jBnHrBd7glmOkSCCA&oe=62A6BFF7"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279662888_1131552664244032_993365576864039167_n.png?_nc_cat=101&ccb=1-6&_nc_sid=aee45a&_nc_ohc=xtXZqqulDxQAX8paQj4&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLEX24m26lWJi2941TaLwQ8K02GSn38Z4XNSwct7L7R4Q&oe=62A49C4E"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279235393_5277928342246243_3478751523821792715_n.png?_nc_cat=102&ccb=1-6&_nc_sid=aee45a&_nc_ohc=4DZ2cSEQ5mcAX97Dfo-&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLtqLvn5gt1rpzfJvP15XrIAJClxcxbVayoYILKzchMZA&oe=62A6E3BB"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280056551_7300601686679489_2947284984644899195_n.png?_nc_cat=106&ccb=1-6&_nc_sid=aee45a&_nc_ohc=CRxeu-Nor2YAX84_Wfr&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJho154_3b-zGQjKKnsRr7CRf4kdN5Q6R8ZIo6LAJsJbg&oe=62A47BB9"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/278659165_528086678966414_1618932988135579803_n.png?stp=dst-png_s600x600&_nc_cat=108&ccb=1-6&_nc_sid=aee45a&_nc_ohc=XYmwQoC-YWAAX9R8Cvp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJ5BMC9iAv2TKRVP_H3a4ler69uuvNzq5L6Jhjk3tehzg&oe=62A6ACA9"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280204677_1224975774574245_4906658277712897517_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=OOmcp2EP7ZMAX-Q2eOI&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKnkwlcD6TzyWPQFOyLgV_nb1kBBCQg7XY3MTRq2_Cfkg&oe=62A41F32"
+                alt="">
+            <br>
+            </p>
+            <p>
+            <h4>TỶ LỆ LỖI KHUNG</h4>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279572034_474070777804069_3175376769253094513_n.png?_nc_cat=107&ccb=1-6&_nc_sid=aee45a&_nc_ohc=pNEfmfPZ-tQAX8zshiT&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLcXDdnZ88uqzWilZA8qlITaYmMc1xzkzrggijVvxrKEQ&oe=62A5B327"
+                alt="">
+            <br>
+            </p>
+            Xem thêm bài tập cuối slide chương 1 <br>
+        </div>
+    </div>
+    <div c2>
+        <h2>CHƯƠNG 2: Kỹ thuật truyền số liệu</h2>
+        <p>
+        <h5>Hệ thống mã</h5>
+        Có 2 hệ thống mã thường được sử dụng: <br>
+        <ul>
+            <li>Mã EBCDIC: 8bit</li>
+            <li>Mã ASCII: 7bit</li>
+        </ul>
+        <h5>Bảng mã EBCDIC</h5>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280298865_419284549643950_8460908634242433066_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=YWp1JvFT0i0AX91MKCd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKe1nfmOrhyMxMCGTup8HkcSotJCESt5Cbr0AuymtsLnA&oe=62A4FD89"
+            alt="">
+        <br>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/277927107_422047962664439_3435235923091052291_n.png?_nc_cat=102&ccb=1-6&_nc_sid=aee45a&_nc_ohc=eXQUnEd5TyEAX87uPWu&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVL7rTRjny1Ec3X6yw6cgT-fPAeSqTX8nCkwZkIJgPtpMA&oe=62A539EA"
+            alt="">
+        <br>
+        <h5>Bảng mã ASCII</h5>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279396261_875022153895577_7136942164084157529_n.png?_nc_cat=111&ccb=1-6&_nc_sid=aee45a&_nc_ohc=ikBgkxDpkHsAX_9G03a&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVICQz2RWro70e8nS-eagewkHYR3A8BGBWtDOItv0AfzuA&oe=62A52040"
+            alt="">
+        <br>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/278868158_423452585813177_2021676580852040240_n.png?_nc_cat=104&ccb=1-6&_nc_sid=aee45a&_nc_ohc=BkPWGyYajBMAX92MkWg&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJvfLLTn6dpfrlaCONX_pC7eFMS4dgBVEG2BJ4f3MBayg&oe=62A6CD8A"
+            alt="">
+        <br>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279035605_549002903420578_6058560174936459540_n.png?_nc_cat=103&ccb=1-6&_nc_sid=aee45a&_nc_ohc=WkhHG4Xd8iQAX954WGb&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJrq9ffo8378UUq1Zv4anXO7YvexdBbASMXmOs_wPmEJQ&oe=62A473FB"
+            alt="">
+        <br>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279229944_369125948510568_8854645912412977817_n.png?_nc_cat=110&ccb=1-6&_nc_sid=aee45a&_nc_ohc=orMg4lIQ7GYAX89TX7e&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJQTZ_2oEh5hywdsD8xc3f36ubLYuzQF_zk1elqfR9gaw&oe=62A56461"
+            alt="">
+        <br>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280277780_3183025458611278_6972642624488120329_n.png?stp=dst-png_p403x403&_nc_cat=111&ccb=1-6&_nc_sid=aee45a&_nc_ohc=LYan0p8MpqYAX-qALtx&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJqPShuMb3UUVzBKq3GYx_ZmMO8LCazYqhdETICzR2oHw&oe=62A6E036"
+            alt="">
+        <br>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280331217_3131815190393850_1483371868008805110_n.png?_nc_cat=108&ccb=1-6&_nc_sid=aee45a&_nc_ohc=s6IjXCbAyYkAX_AkrVe&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVISrq7CbzaRxUCWK53QqlxohpfoAWPHaFHtCMYY7XklMQ&oe=62A39101"
+            alt="">
+        <br>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280026437_1062322944682134_301538936349945291_n.png?stp=dst-png_p403x403&_nc_cat=111&ccb=1-6&_nc_sid=aee45a&_nc_ohc=VZWk90e0LAYAX_NzQka&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLr_CllZwz74F7A3FNgyWZzdiL0m-Y1umoK-w0PLkgOlw&oe=62A70612"
+            alt="">
+        <br>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279235826_413987413600414_5854652393290641147_n.png?_nc_cat=104&ccb=1-6&_nc_sid=aee45a&_nc_ohc=bNC_tZN73jAAX8jD4df&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJxKztIY24jSeEUeHIxb4YY1DNh7_hl8-TpcEOGhWDbLg&oe=62A67362"
+            alt="">
+        <br>
+        </p>
+        <h3>Truyền bất đồng bộ - asynchronous transmission</h3>
+        <div>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/278779025_317985803822938_8092124599875120704_n.png?_nc_cat=100&ccb=1-6&_nc_sid=aee45a&_nc_ohc=g7bwBqq17BEAX9_DYY3&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLrsM22zBjsvg9NBXy_vANIJ0BZOh2oJuz7w66RFufLBA&oe=62A6B055"
+                alt="">
+            <br>
+            <p>
+                Các kỹ thuật trong truyền bất đồng bộ:
+            <ul>
+                <li>Đồng bộ bit</li>
+                <li>Đồng bộ ký tự</li>
+                <li>Đồng bộ khung</li>
+            </ul>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280421043_377213137706367_2843266964995840972_n.png?stp=dst-png_p403x403&_nc_cat=108&ccb=1-6&_nc_sid=aee45a&_nc_ohc=79SJ4Q4hMcAAX8ltBWp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLpieXk_b0HtXwQTePCNiel0vEMY9tQxYDUV1EHfz7aUQ&oe=62A48D91"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279833101_789672851999284_1255608207490512319_n.png?_nc_cat=104&ccb=1-6&_nc_sid=aee45a&_nc_ohc=Av_SBWBsnmkAX-ZojgB&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIl59jAH6aBO8pEiBG8Q8eXskHwbxw5mcjnjJvO2IosXg&oe=62A6F0C5"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279855611_952138595451535_1626487070839011772_n.png?_nc_cat=100&ccb=1-6&_nc_sid=aee45a&_nc_ohc=27SGNAnAHqIAX9MZHMz&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIgjydGU-AcUWp5b4nhKrOFKACdSxiEOz3C-2tISiNlPw&oe=62A40465"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279934964_1042410626693796_2809601869822127252_n.png?_nc_cat=101&ccb=1-6&_nc_sid=aee45a&_nc_ohc=CkiP4XLNVrgAX_uLfgu&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVL3iP6bnUaNy7olS4S1TmwGjKp_yIlUqdFp39GNrrsjYA&oe=62A581CC"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279302966_1344317742645434_7407630921559754144_n.png?_nc_cat=108&ccb=1-6&_nc_sid=aee45a&_nc_ohc=TROMXjNJdhsAX_XySMP&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJkKe6U_d2mOvRO-XjU5jWtbW6SCwMMWH0iB5XG-_3DrQ&oe=62A5D576"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280030800_1135094550396494_3287386215882807966_n.png?_nc_cat=100&ccb=1-6&_nc_sid=aee45a&_nc_ohc=xRUzOPxdHGIAX_H-uud&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJeYqYpiihQLNVi0lRBilAdxnEot1NL03K4XK4Jc3GCnA&oe=62A5E529"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279091999_517079783446684_7991121043883106105_n.png?_nc_cat=106&ccb=1-6&_nc_sid=aee45a&_nc_ohc=j6vHIDLnj_EAX81QlpK&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKYb-AUIk1NaK8qgXux7Aac71ngmDCnqxqaveVYhakrvQ&oe=62A50B62"
+                alt="">
+            <br>
+
+            </p>
+        </div>
+        <h3>Truyền đồng bộ - synchronous transmission</h3>
+        <div>
+            <p>
+                Đặc điểm: <br>
+                -Truyền bất đồng bộ có nhược điểm là khi truyền tốc độ cao thì phương pháp đồng bộ bit không đảm bảo độ
+                tin cậy, hiệu suất truyền không cao. Truyền đồng bộ sẽ khắc phục <br>
+                -Dữ liệu được truyền liên tục thành từng khối nên sẽ không có start bit và stop bit <br>
+                -Clock bên phát và bên thu phải đồng bộ nhau <br>
+            </p>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/278849582_537079484473429_7499794555604665615_n.png?_nc_cat=108&ccb=1-6&_nc_sid=aee45a&_nc_ohc=o_vSxidVxroAX9C6hDP&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJIcoPbTSPihiGr38jOzyLY92c3u2KF7cLCRS9vybAsQg&oe=62A659B3"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280211443_1399589797181622_2729154259125872275_n.png?stp=dst-png_p403x403&_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=ZEkUKKguYlcAX8-R7HJ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIgJz6DHFS2aNXCBeX1k_UjB56kL3WXbyIdxq0608T0gA&oe=62A562A1"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279086543_1137283323728195_8817594188917023381_n.png?_nc_cat=104&ccb=1-6&_nc_sid=aee45a&_nc_ohc=U9Amo76ic3MAX_yj8gH&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIl1xZ8hD9mY6xljuUcTmV5Kwv0DP0dQdeQyrPfQeeUCg&oe=62A627C7"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280046765_1874958682850834_6880345270339250419_n.png?_nc_cat=111&ccb=1-6&_nc_sid=aee45a&_nc_ohc=lT7EYofWzWYAX90-FQ6&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJt_A5noJNqCORETTCtOMyXgYBv1uV-4cXx-W4FpWLeFw&oe=62A74AD6"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280040352_1137801693668110_5950979488853834440_n.png?_nc_cat=103&ccb=1-6&_nc_sid=aee45a&_nc_ohc=ltj4N6xQXYoAX8oHz1a&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJ5MbxeiSFpRGLB3ZQWU1kcTeRyjdWFV-bQ7BV3RcjKcA&oe=62A4B705"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279571783_511797677354591_2472100861116844510_n.png?_nc_cat=105&ccb=1-6&_nc_sid=aee45a&_nc_ohc=afSWtruOoXwAX9uLcni&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLhwknxZUNkF3OGVzH46b9xCSeGr6Cvx-nGZUKIRcWOZA&oe=62A6A930"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/278742804_847367099553759_6221766434200966478_n.png?_nc_cat=106&ccb=1-6&_nc_sid=aee45a&_nc_ohc=8w81xvup5dsAX_6iuRl&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJD5RnqyLcph8urnsh0uAXUrbz7lEv2H_kjuQHTCCEeUw&oe=62A5EF83"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280150652_548902543249141_1607465240603604479_n.png?_nc_cat=104&ccb=1-6&_nc_sid=aee45a&_nc_ohc=P_w2USJhpEwAX-e2RcL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKsSxXYTEgIOVt7W-XA2cJU5AcYa1dlFHXaLa15ttuwvw&oe=62A3E606"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279578719_421439389794722_4695315905073799660_n.png?_nc_cat=111&ccb=1-6&_nc_sid=aee45a&_nc_ohc=EWmKoFCxP1cAX-aZBDH&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIg1g9LW6Fl6smpf0cZEutXxQ45mnEcHk5Fpm8NqSM9bw&oe=62A44121"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279917154_1758483617823683_3139890539047109824_n.png?_nc_cat=110&ccb=1-6&_nc_sid=aee45a&_nc_ohc=LL4PqbfDMHoAX9da60b&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKTbG79SUuIv-80mKMkNqtb8WK16SCkjjJhfubmPL4iLQ&oe=62A486CF"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280078415_1060388187920697_3390514253211445689_n.png?_nc_cat=106&ccb=1-6&_nc_sid=aee45a&_nc_ohc=NPjsEjAYZPEAX8gcZR1&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLctmhHFbnw8jVKz-Fc9F20McTDfoRnyBlP0o-u0PfNJQ&oe=62A3E766"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280574477_535401748250981_7677501185627987578_n.png?_nc_cat=102&ccb=1-6&_nc_sid=aee45a&_nc_ohc=taeBLOrSY2QAX8CAv6k&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLVPNKGPxMWTjhmKZT18yDu0g4M3BKovAKmcrXEsY8rGA&oe=62A503AD"
+                alt="">
+            <br>
+
+        </div>
+        <h3>Mã hóa kênh - channel coding</h3>
+        <div>
+            <ul>
+                <li>Pirity check</li>
+                <li>Block sum check</li>
+                <li>Cyclic redundancy check</li>
+            </ul>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280149356_752239179107370_1754409828691290328_n.png?_nc_cat=101&ccb=1-6&_nc_sid=aee45a&_nc_ohc=X12C3M6fRZcAX-cnexm&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKO-JF1vxQgXOZCSvWN91q7jyFwn0REKvUOS1_jJHkwhQ&oe=62A609CD"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280047335_732328198199498_3758310512777740913_n.png?_nc_cat=100&ccb=1-6&_nc_sid=aee45a&_nc_ohc=SKzU_OhGGfIAX8zdEDB&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVL1aOoObhZob99zFmuUwENmvEVbdlgVR_50dTdcuInYsA&oe=62A64830"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279524774_473765217834518_3029859308558637821_n.png?_nc_cat=111&ccb=1-6&_nc_sid=aee45a&_nc_ohc=4kUnjczrTFEAX8FIA2P&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJFJecZ_kz9iSC3Jr8nYBZEUPQCMFSgI-GcxQRFm9p4FQ&oe=62A59B5E"
+                alt="">
+            <br>
+            <p></p>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279100555_523465929406926_4517892639492474611_n.png?_nc_cat=111&ccb=1-6&_nc_sid=aee45a&_nc_ohc=cy8xtvnhlIkAX_V771F&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJdXi-kEGyOPZhcDyCBX1p1TpgfFnPnWbsmr9J-QhYPmQ&oe=62A70938"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279462230_702915887627683_4915726064473019259_n.png?_nc_cat=102&ccb=1-6&_nc_sid=aee45a&_nc_ohc=KRuOsVmLBvMAX9Vui6L&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLibFYDCHpOLsxaDaQSlvxqvaE0Cgn920jl-hP6xMzJMA&oe=62A68D17"
+                alt="">
+            <br>
+            <p></p>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280124588_5392222520796975_8476464300695979316_n.png?stp=dst-png_p403x403&_nc_cat=110&ccb=1-6&_nc_sid=aee45a&_nc_ohc=692vHG0UwToAX9mkt0f&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLK5PBpOpZa1MAcgCasDciiXEdSR2qmK3aFR9f_gyHmpw&oe=62A39FED"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/278526018_578177500143809_4096212429937490866_n.png?_nc_cat=100&ccb=1-6&_nc_sid=aee45a&_nc_ohc=6ITja_PhLC0AX-Bz_eF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLeddX9iM2fbmyTOy5TxN4_z2pibd08HWH_4Nkp8egGXA&oe=62A6A280"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/277927107_1496818060734141_6237197412595377861_n.png?_nc_cat=109&ccb=1-6&_nc_sid=aee45a&_nc_ohc=TYaXCUNttCEAX8Kl1e5&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKnZ3uNHtwSzIGjg3E28voRw67dRUxNyHpF-1KU-IKObg&oe=62A435E5"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279640439_1204908720280514_526546567121296822_n.png?_nc_cat=111&ccb=1-6&_nc_sid=aee45a&_nc_ohc=px0c9Nj-VlYAX9A59qk&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKojcJKGGHCAX-XsldHRC202oBi9bCaAH7u-UTtZUdlGQ&oe=62A54BB3"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279520993_467999481791525_8308868131269502587_n.png?_nc_cat=110&ccb=1-6&_nc_sid=aee45a&_nc_ohc=LvZpViBjfekAX90RBGT&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKhSa_-uLlnAAoJagSNKqekNt3t5wpsZ9dqq8eqrYz0QQ&oe=62A6860D"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279139886_543285094026591_6329423613881592414_n.png?_nc_cat=106&ccb=1-6&_nc_sid=aee45a&_nc_ohc=H6Uzitf6ZFkAX-RvvHH&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIAmnu3dqxly8S9P7YZawVUcQT9ALqvpZYM9P8bO2j77A&oe=62A38509"
+                alt="">
+            <br>
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280504459_1092272834969863_2519449995286053129_n.png?_nc_cat=106&ccb=1-6&_nc_sid=aee45a&_nc_ohc=nTDYl09DDe4AX-QNBpJ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJVjVuHSu5uohjF_PAIeZfw9E7k2Niuy0rZj-MsQ3S9gQ&oe=62A59584"
+                alt="">
+            <br>
+            <p></p>
+        </div>
+        <h3>Các kỹ thuật nén dữ liệu - data compression</h3>
+    </div>
+</body>
+
+</html>
