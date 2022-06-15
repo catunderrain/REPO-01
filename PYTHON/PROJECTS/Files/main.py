@@ -1,5 +1,7 @@
 import csv
 
-path = 'python/projects/files/'
-file = open(path + 'csv.csv', 'r')
-print(file.read())
+file = open('python/projects/files/csv.csv', 'r')
+b = csv.reader(file)
+print(b)
+a = list(b)
+print(a[1])

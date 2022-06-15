@@ -16,7 +16,7 @@ turtle.hideturtle()
 turtle.speed(10)
 turtle.delay(0)
 length = 300
-turn_by = 61
+turn_by = 91
 turtle.penup()
 turtle.setpos(-length/2, length/2)
 turtle.stamp()
