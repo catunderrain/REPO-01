@@ -1,9 +1,10 @@
 import numpy as np
 import random
 
-samplerate = 4400
+samplerate = 44100
 
-def wave(freq, duration = 0.20):
+
+def wave(freq, duration=0.20):
     amplitude = 4096
     t = np.linspace(0, duration, int(samplerate * duration))
     wave = amplitude * np.sin(2 * np.pi * freq * t)
@@ -47,19 +48,20 @@ def pianonotes():
               'a2',
               'A2',
               'b2'
-              ] 
+              ]
     basefreq = 261.63
-    notefreqs = {octave[i]: basefreq * pow(2,(i/12)) for i in range(len(octave))}        
+    notefreqs = {octave[i]: basefreq *
+                 pow(2, (i/12)) for i in range(len(octave))}
     notefreqs['x'] = 0.0
     return notefreqs
 
 
 def randnote(numnote, string, add):
-    g = mang = [] 
+    g = mang = []
     mang = np.array([string[i] for i in range(len(string))]).tolist() + add
     for i in range(numnote):
-       x = random.randint(0, len(mang) - 1)
-       g.append(mang[x]) 
+        x = random.randint(0, len(mang) - 1)
+        g.append(mang[x])
     g = [g[i] + '-' for i in range(len(g))]
     final = ''.join(g)[:2*len(g) - 1]
     return final
